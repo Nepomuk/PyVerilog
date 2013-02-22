@@ -28,6 +28,6 @@ class Cell(Generic):
         return pin
 
     def linkMod(self, mod):
-        if self.__submod != None:
-            print "Warning: " + self.name + " multiply linked"
+        #if self.__submod != None:
+        #    print "Warning: " + self.name + " multiply linked"
         self.__submod = mod

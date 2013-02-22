@@ -1,7 +1,7 @@
 This Python library facilitates parsing Verilog netlists.  It has ONLY ever been tested on flattened gate-level netlists, so I wouldn't expect it to work out of the box on anything else.
 
 requirements.txt
-This file lists the dependencies for this library. If you have virtualenv/pip installed (recommended), just do 
+This file lists the dependencies for this library. If you have virtualenv/pip installed (recommended), just do
 $ pip install -r requirements.txt
 
 
@@ -13,9 +13,21 @@ The rest of the files build the Netlist datastructure.
 
 Example Usage:
 
-See the doctest inside the Netlist class in Netlist.py for some example usage. 
+See the doctest inside the Netlist class in Netlist.py for some example usage.
 To run the test,
 
 python Netlist.py -v
 
+SeanChen
+1. add double link pp from port to module
+>>> pp = port()
+>>> pp.module # find it's belong module
 
+2. add find sub Modules function
+>>> nl1.link("MYINVD1")
+>>> nl1.topMod
+>>> MYINVD1
+>>> nl1.finSubModules()
+>>> ["xx", "cc"] # the sub modules not in cell lib
+
+3. add multi code trace

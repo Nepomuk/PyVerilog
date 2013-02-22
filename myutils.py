@@ -1,5 +1,5 @@
 def cleanget(dictionary, key):
-    val = dict()
+    val = {}
     if key in dictionary:
         val = dictionary.get(key)
     return val

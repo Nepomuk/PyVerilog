@@ -102,15 +102,24 @@ def dumpTokens(s,l,t):
     import pprint
     pprint.pprint( t.asList() )
 
-module = None
+# top parameters
+modules = []
+module_stacks = []
 
 def parseModule(s,l,t):
     import Module
-    global module
+    global modules
+    global module_stacks
     module = Module.Module({"name": t[0]})
+    modules.append(module)
+    module_stacks.append(module)
+
+def parseEndModule():
+    module_stacks.pop(-1)
 
 def parsePort(s,l,t,port):
-    global module
+    global module_stacks
+    module = module_stacks[-1]
     width=1
     idx=1
     # handle optional size declaration
@@ -151,13 +160,14 @@ def parseOutput(s,l,t):
 def parseSubmod(s,l,t):
     import Cell
     t = t[0]
-    global module
+    global module_stacks
+    module = module_stacks[-1]
     submodname = t[0]
     if t[1][0][0] == "#":
         raise Exception("This cell might have parameters? " + str(t[1][0]))
     name = t[1][0][0]
     cell = module.new_cell({ "name" : name, "submodname": submodname })
-    
+
     for tok in t[1][1]:
         # look for pin-connections
         if tok != '(' and tok != ')':
@@ -219,7 +229,7 @@ def Verilog_BNF():
                             ).setName("baseIdent")
         identifier2 = Regex(r"\\\S+").setParseAction(lambda t:t[0][1:]).setName("escapedIdent")
         identifier = identifier1 | identifier2
-        
+
         hexnums = nums + "abcdefABCDEF" + "_?"
         base = Regex("'[bBoOdDhH]").setName("base")
         basedNumber = Combine( Optional( Word(nums + "_") ) + base + Word(hexnums+"xXzZ"),
@@ -652,15 +662,15 @@ def Verilog_BNF():
         port = portExpr | Group( ( "." + identifier + "(" + portExpr + ")" ) )
 
         moduleHdr = Group ( oneOf("module macromodule") + identifier("moduleName").setParseAction(parseModule) +
-                 Optional( "(" + Group( Optional( delimitedList( 
-                                    Group(oneOf("input output") + 
+                 Optional( "(" + Group( Optional( delimitedList(
+                                    Group(oneOf("input output") +
                                             (netDecl1Arg | netDecl2Arg | netDecl3Arg) ) |
-                                    port ) ) ) + 
+                                    port ) ) ) +
                             ")" ) + semi ).setName("moduleHdr")
 
         module = Group(  moduleHdr +
                  Group( ZeroOrMore( moduleItem ) ) +
-                 "endmodule" ).setName("module")#.setDebug()
+                 "endmodule" ).setName("module").setParseAction(parseEndModule)
 
         udpDecl = outputDecl | inputDecl | regDecl
         #~ udpInitVal = oneOf("1'b0 1'b1 1'bx 1'bX 1'B0 1'B1 1'Bx 1'BX 1 0 x X")
@@ -702,7 +712,7 @@ def Verilog_BNF():
         verilogbnf.ignore( cppStyleComment )
         verilogbnf.ignore( compilerDirective )
 
-    return verilogbnf 
+    return verilogbnf
 
 
 def test( strng ):
@@ -741,7 +751,7 @@ def parseFile(fileName):
     #totalTime += elapsed
     #if ( len( tokens ) ):
     #    print "OK", elapsed
-    return module
+    return modules
 
 #~ if __name__ == "__main__":
 #if 0:
@@ -830,7 +840,7 @@ def parseFile(fileName):
 #    #~ lp = LineProfiler(ParseResults.__init__)
 #
 #    main()
-#    
+#
 #    #~ lp.print_stats()
 #    #~ import hotshot
 #    #~ p = hotshot.Profile("vparse.prof",1,1)

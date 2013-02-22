@@ -1,5 +1,5 @@
 
-module Iface_test ( clk, reset, data_in, valid_in, data_out, valid_out, cap, 
+module Iface_test ( clk, reset, data_in, valid_in, data_out, valid_out, cap,
         ready_out );
   input [5:0] data_in;
   output [5:0] data_out;
@@ -14,7 +14,6 @@ module Iface_test ( clk, reset, data_in, valid_in, data_out, valid_out, cap,
          n76, n77, n78, n79, n80, n81, n82, n83, n84, n85, n86, n87, n88, n89,
          n90, n91, n92, n93, n94, n95, n96, n97, n98, n99, n100, n101;
   wire   [23:0] q_entry;
-
   DFKCNQD1 fsm0_state_reg_1_ ( .CN(n49), .D(n8), .CP(clk), .Q(fsm0_state_1_)
          );
   DFKCNQD1 fsm0_state_reg_0_ ( .CN(n7), .D(fsm0_nextState_0_), .CP(clk), .Q(
@@ -99,41 +98,41 @@ module Iface_test ( clk, reset, data_in, valid_in, data_out, valid_out, cap,
   MAOI22D1 U79 ( .A1(n82), .A2(n84), .B1(n84), .B2(n82), .ZN(n47) );
   INVD1 U80 ( .I(reset), .ZN(n8) );
   INVD1 U81 ( .I(q_head_0_), .ZN(n53) );
-  AOI22D1 U82 ( .A1(q_head_0_), .A2(q_entry[19]), .B1(q_entry[13]), .B2(n53), 
+  AOI22D1 U82 ( .A1(q_head_0_), .A2(q_entry[19]), .B1(q_entry[13]), .B2(n53),
         .ZN(n54) );
-  AOI221D1 U83 ( .A1(q_entry[7]), .A2(q_head_0_), .B1(q_entry[1]), .B2(n53), 
+  AOI221D1 U83 ( .A1(q_entry[7]), .A2(q_head_0_), .B1(q_entry[1]), .B2(n53),
         .C(q_head_1_), .ZN(n55) );
   AOI21D1 U84 ( .A1(q_head_1_), .A2(n54), .B(n55), .ZN(n56) );
   AO22D1 U85 ( .A1(data_in[1]), .A2(n93), .B1(n90), .B2(n56), .Z(data_out[1])
          );
   INVD1 U86 ( .I(q_head_0_), .ZN(n57) );
-  AOI22D1 U87 ( .A1(q_head_0_), .A2(q_entry[20]), .B1(q_entry[14]), .B2(n57), 
+  AOI22D1 U87 ( .A1(q_head_0_), .A2(q_entry[20]), .B1(q_entry[14]), .B2(n57),
         .ZN(n58) );
-  AOI221D1 U88 ( .A1(q_entry[8]), .A2(q_head_0_), .B1(q_entry[2]), .B2(n57), 
+  AOI221D1 U88 ( .A1(q_entry[8]), .A2(q_head_0_), .B1(q_entry[2]), .B2(n57),
         .C(q_head_1_), .ZN(n59) );
   AOI21D1 U89 ( .A1(q_head_1_), .A2(n58), .B(n59), .ZN(n60) );
   AO22D1 U90 ( .A1(data_in[2]), .A2(n93), .B1(n90), .B2(n60), .Z(data_out[2])
          );
   INVD1 U91 ( .I(q_head_0_), .ZN(n61) );
-  AOI22D1 U92 ( .A1(q_head_0_), .A2(q_entry[21]), .B1(q_entry[15]), .B2(n61), 
+  AOI22D1 U92 ( .A1(q_head_0_), .A2(q_entry[21]), .B1(q_entry[15]), .B2(n61),
         .ZN(n62) );
-  AOI221D1 U93 ( .A1(q_entry[9]), .A2(q_head_0_), .B1(q_entry[3]), .B2(n61), 
+  AOI221D1 U93 ( .A1(q_entry[9]), .A2(q_head_0_), .B1(q_entry[3]), .B2(n61),
         .C(q_head_1_), .ZN(n63) );
   AOI21D1 U94 ( .A1(q_head_1_), .A2(n62), .B(n63), .ZN(n64) );
   AO22D1 U95 ( .A1(data_in[3]), .A2(n93), .B1(n90), .B2(n64), .Z(data_out[3])
          );
   INVD1 U96 ( .I(q_head_0_), .ZN(n65) );
-  AOI22D1 U97 ( .A1(q_head_0_), .A2(q_entry[22]), .B1(q_entry[16]), .B2(n65), 
+  AOI22D1 U97 ( .A1(q_head_0_), .A2(q_entry[22]), .B1(q_entry[16]), .B2(n65),
         .ZN(n66) );
-  AOI221D1 U98 ( .A1(q_entry[10]), .A2(q_head_0_), .B1(q_entry[4]), .B2(n65), 
+  AOI221D1 U98 ( .A1(q_entry[10]), .A2(q_head_0_), .B1(q_entry[4]), .B2(n65),
         .C(q_head_1_), .ZN(n67) );
   AOI21D1 U99 ( .A1(q_head_1_), .A2(n66), .B(n67), .ZN(n68) );
   AO22D1 U100 ( .A1(data_in[4]), .A2(n93), .B1(n90), .B2(n68), .Z(data_out[4])
          );
   INVD1 U101 ( .I(q_head_0_), .ZN(n69) );
-  AOI22D1 U102 ( .A1(q_head_0_), .A2(q_entry[23]), .B1(q_entry[17]), .B2(n69), 
+  AOI22D1 U102 ( .A1(q_head_0_), .A2(q_entry[23]), .B1(q_entry[17]), .B2(n69),
         .ZN(n70) );
-  AOI221D1 U103 ( .A1(q_entry[11]), .A2(q_head_0_), .B1(q_entry[5]), .B2(n69), 
+  AOI221D1 U103 ( .A1(q_entry[11]), .A2(q_head_0_), .B1(q_entry[5]), .B2(n69),
         .C(q_head_1_), .ZN(n71) );
   AOI21D1 U104 ( .A1(q_head_1_), .A2(n70), .B(n71), .ZN(n72) );
   AO22D1 U105 ( .A1(data_in[5]), .A2(n93), .B1(n90), .B2(n72), .Z(data_out[5])
@@ -157,8 +156,8 @@ module Iface_test ( clk, reset, data_in, valid_in, data_out, valid_out, cap,
   NR2D1 U122 ( .A1(n91), .A2(n97), .ZN(n83) );
   INVD1 U123 ( .I(n91), .ZN(n92) );
   NR2D1 U124 ( .A1(n76), .A2(n92), .ZN(n85) );
-  INVD1 U125 ( .I(cap[0]), .ZN(n84) );
-  OAI33D1 U126 ( .A1(n83), .A2(cap[1]), .A3(n78), .B1(n84), .B2(n85), .B3(n77), 
+//  INVD1 U125 ( .I(cap[0]), .ZN(n84) );
+  OAI33D1 U126 ( .A1(n83), .A2(cap[1]), .A3(n78), .B1(n84), .B2(n85), .B3(n77),
         .ZN(n80) );
   OAI32D1 U127 ( .A1(cap[2]), .A2(n81), .A3(n89), .B1(n80), .B2(n79), .ZN(n48)
          );
@@ -175,5 +174,14 @@ module Iface_test ( clk, reset, data_in, valid_in, data_out, valid_out, cap,
   IND3D1 U137 ( .A1(q_tail_0_), .B1(n98), .B2(n8), .ZN(n99) );
   MUX4D1 U138 ( .I0(q_entry[0]), .I1(q_entry[6]), .I2(q_entry[12]), .I3(
         q_entry[18]), .S0(q_head_0_), .S1(q_head_1_), .Z(q_N21) );
+
+  MYINVD1 U139 ( .I(cap[0]), .ZN(n84)); //
+
 endmodule
 
+
+module MYINVD1(I, ZN);
+input I;
+output ZN;
+    INVD1 U1 (.I(I), .ZN(ZN));
+endmodule

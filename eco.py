@@ -10,48 +10,17 @@ import pickle
 import re
 import verilogParse
 import myutils
-from collections import defaultdict
-################################################################################
-################################################################################
-class Netlist:
+
+class ECO:
     """
-    This class is a Python datastructure for storing/querying Verilog
-    netlists.
-
-    The Netlist module is able to read both from Verilog files and special
-    YAML-formatted files. The YAML format is currently much faster. I have
-    a separate Verilog-->YAML converter that I've used to create YAML files up
-    until now (based in Perl, booo). The Verilog support in Python is newly
-    added.
-
-    This example shows how to read and link netlists. It demonstrates both
-    reading from Verilog (n1) and YAML (n2), and then verifies that
-    the a few of the netlist properties match.
-
-    >>> nl1 = Netlist()
-    >>> nl2 = Netlist()
-    >>> nl1.readYAML("test/gates.yml")
-    >>> nl2.readYAML("test/gates.yml")
-    >>> nl1.readVerilog("test/Iface_test.gv")
-    >>> nl2.readYAML("test/Iface_test.yml")
-    >>> nl1.link("MYINVD1")
-    >>> nl1.topMod
-    'MYINVD1'
-    >>> nl1.link("Iface_test")
-    >>> nl2.link("Iface_test")
-    >>> nl1.topMod
-    'Iface_test'
-    >>> nl2.topMod
-    'Iface_test'
-    >>> mod1 = nl1.mods[nl1.topMod]
-    >>> mod2 = nl2.mods[nl2.topMod]
-    >>> set(mod1.ports.keys()) == set(mod2.ports.keys())
-    True
-    >>> set(mod1.cells.keys()) != set(mod2.cells.keys())
-    True
-    >>> set(mod1.nets.keys()) == set(mod2.nets.keys())
-    True
-    >>> nl1.checkDesign()
+    Add new ECO cell in org Netlist .v file
+    >>> eco = ECO()
+    >>> eco.read_getes_lib("gets.yml") # the support cells lib
+    >>> eco.read_eco("ECO.INI") # read the ECO description
+    >>> eco.read_verilog("xx.v") # read the org verilog
+    >>> eco.check()
+    >>> eco,write_verilog("new_xx.v") # write out the new verilog
+    >>> eco.report() # report the warning/error files
     """
 
     mods = property(lambda self: self.__mods)
@@ -99,164 +68,23 @@ class Netlist:
 
         self.__topMod = topModule
 
-
-    def findSubModules(self):
-	""" if the cur module has sub modules(cell) then return it """
-        submodules = set()
-        mod = self.__mods[self.__topMod]
-
-        # check all cells
-        for cell in mod.cells:
-            if mod.cells[cell].submodname not in self.__yaml.keys():
-                submodules.add(mod.cells[cell].submodname)
-	return submodules
-
-
-    def checkInputPorts(self):
-    	""" make sure input ports ONLY connect to input ports """
-
-	# check top module input port Fanin is empty, Fanout port is Not empty
-	for port_nm, port_pp in self.__mods[self.__topMod].ports.items():
-	    if isinstance(port_pp, PortIn.PortIn) and port_pp.direction == 'in':
-
-		if isinstance(port_pp.fanin, list) and len(port_pp.fanin) > 0:
-		    raise Exception(str("the input port %s Fanin in top module %s is not empty [%s]" \
-		    	    %(port_nm, \
-		    	    self.__topMod,
-		    	    ",".join([i.portname for i in port_pp.fanin]))))
-
-		if isinstance(port_pp.fanout, list) and len(port_pp.fanout) == 0:
-		    raise Exception(str("the input port %s Fanout in top module %s is empty" \
-		    	    %(port_nm, self.__topMod)))
-
-		# check top module input port Fanout should be link to the Basic Cell or sub module input
-		missing = []
-		for pp in port_pp.fanout:
-		    if not isinstance(pp.port, (PortIn.PortIn, PortClk.PortClk)):
-		    	missing.append(pp.portname)
-
-		if len(missing) > 0:
-		    raise Exception(str("the input port %s Fanout should be input type [%s]" \
-		    	    %(port_nm, ",".join(missing))))
-
-
-    def checkOutputPorts(self):
-	""" make sure output ports ONLY connect to output ports """
-
-	# check top module output Fanout is Not empty, Fanin is empty
-	for port_nm, port_pp in self.__mods[self.__topMod].ports.items():
-
-	    if isinstance(port_pp, PortOut.PortOut) and port_pp.direction == 'out':
-
-		if isinstance(port_pp.fanin, list) and len(port_pp.fanin) == 0:
-		    raise Exception(str("the output port %s Fanin in top module %s is empty" \
-		    	    %(port_nm, self.__topMod)))
-
-#		if port_pp.fanout != None and len(port_pp.fanout) > 0:
-#		    raise Exception(str("the output port %s Fanout in top module %s is not empty [%s]"\
-#		    	    %(port_nm, \
-#		    	    self.__topMod, \
-#			    ",".join([i.portname for i in port_pp.fanout]))))
-
-
-    def checkConnectionWidth(self):
-    	""" check all connection width """
-
-        mod = self.__mods[self.__topMod]
-
-	missing = []
-
-        for cell in mod.cells:
-            submod = self.__mods[mod.cells[cell].submodname]
-            mod.cells[cell].linkMod(submod)
-
-            for pin in mod.cells[cell].pins:
-            	pp  = mod.cells[cell].pins[pin]
-                net = mod.cells[cell].pins[pin].net
-
-		if isinstance(pp.port, PortOut.PortOut):
-		    for fout in net.fanout:
-		    	if fout.port.width != pp.port.width:
-		    	    missing.append("%s.%s(%d) != %s.%s(%d)" \
-		    	    	    %(cell, \
-		    	    	    pp.portname, \
-		    	    	    pp.port.width, \
-		    	    	    fout.cell.submodname, \
-		    	    	    fout.portname, \
-		    	    	    fout.port.width))
-
-		if isinstance(pp.port, PortIn.PortIn) or isinstance(pp.port, PortClk.PortClk):
-		    for fin in net.fanin:
-			if fin.port.width != pp.port.width:
-			    missing.append("%s.%s(%d) != %s.%s(%d)" \
-			    	    %(cell, \
-			    	    pp.portname, \
-			    	    pp.port.width, \
-			    	    fin.cell.submodname, \
-			    	    fin.portname, \
-			    	    fin.port.width))
-
-		if len(missing) > 0:
-		    raise Exception(str("\n".join(missing)))
-
-
-    def checkConnectionDriver(self):
-	""" check connection Driver has exist """
-
-        mod = self.__mods[self.__topMod]
-
-        missing_fout = defaultdict(list)
-	missing_fin  = defaultdict(list)
-
-	top_ports = self.__mods[self.__topMod].ports.keys()
-
-        for cell in mod.cells:
-            submod = self.__mods[mod.cells[cell].submodname]
-            mod.cells[cell].linkMod(submod)
-
-            for pin in mod.cells[cell].pins:
-            	pp  = mod.cells[cell].pins[pin]
-                net = mod.cells[cell].pins[pin].net
-
-		if isinstance(pp.port, PortOut.PortOut):
-		    if len(net.fanout) == 0:
-			if pp.netname not in top_ports:
-			    missing_fout[cell].append('(' + pp.portname + ',' + pp.netname + ')')
-
-		    # if the fanout is connected to the internal cells
-		    for fout in net.fanout:
-			if fout.portname == None:
-			    if fout.netname not in top_ports:
-			    	missing_fout[cell].append('(' + pp.portname + ',' + pp.netname + ')')
-
-		if isinstance(pp.port, PortIn.PortIn) or isinstance(pp.port, PortClk.PortClk):
-		    if len(net.fanin) == 0:
-			if pp.netname not in top_ports:
-			   missing_fin[cell].append('(' + pp.portname + ',' + pp.netname + ')')
-
-		    # if the fanin is connected to the internal cells
-		    for fin in net.fanin:
-			if fin.portname == None:
-			    if fin.netname not in top_ports:
-				missing_fin[cell].append('(' + pp.portname + ',' + pp.netname + ')')
-
-	if missing_fin or missing_fout:
-	    missing = []
-	    for cc, fin in missing_fin.items():
-	    	missing.append(cc + ' missing fanin ' + ','.join(fin))
-	    for cc, fout in missing_fout.items():
-	    	missing.append(cc + ' missing_fout ' + ','.join(fout))
-
-	    raise Exception(str("\n".join(missing)))
-
-
-    def checkDesign(self):
-        "verify the design has legal connections (post-linking)"
-
-        self.checkInputPorts()
-        self.checkOutputPorts()
-	self.checkConnectionDriver()
-	self.checkConnectionWidth()
+    def checkInputs(self):
+    	""" make sure the
+    	pass
+#    def checkDesign(self):
+#        "verify the design has legal connections (post-linking)"
+#
+#        # make sure input ports ONLY connect to input ports
+#
+#
+#        # make sure the output ports ONLY connect to output ports
+#
+#
+#        # make sure all connections have 1 and only 1 driver
+#
+#
+#        # sanity check all connection widths
+#        pass
 
     def addModule(self, mod):
         modname = mod.name
@@ -266,9 +94,8 @@ class Netlist:
 
     def readVerilog(self, verilogFile):
         """ Parse a Gate-level Verilog file using Python"""
-        mods = verilogParse.parseFile(verilogFile)
-	for mod in mods:
-	    self.__mods[mod.name] = mod
+        mod = verilogParse.parseFile(verilogFile)
+        self.__mods[mod.name] = mod
 
     def writeVerilog(self, vFileName):
         """ Write a gate-level verilog file """
