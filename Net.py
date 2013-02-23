@@ -30,6 +30,10 @@ class Net(Generic):
         self.__fanout = []
 
     def __eq__(self, other):
+	raise NotImplementedError, """
+# maybe we should use graph alg to comapre two diff graphs
+"""
+
     	bool_width = self.__width == other.width
         bool_msb   = self.__msb   == other.msb
     	bool_lsb   = self.__lsb   == other.lsb
@@ -88,10 +92,11 @@ class Net(Generic):
     	""" output can have one or multi ports drive """
         self.__fanout.append(pin)
 
-#    def setModule(self, module):
-#    	""" set it's belong module """
-#    	self.__module = module
+    def updateFanin(self, fanins):
+    	self.__fanin = fanins
 
+    def updateFanout(self, fanouts):
+    	self.__fanout = fanouts
 
 
 

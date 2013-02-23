@@ -6,10 +6,8 @@ class Generic(object):
         self.__module = self.get("module")
 
     def __eq__(self, other):
-	if self.__name == other.name and \
-	   self.__module == other.module:
-	       return True
-	return False
+	return cmp(self.__name, other.name) == 0 and \
+	       cmp(self.__module, other.module) == 0
 
     def get(self, name, require=True):
         ret = None

@@ -92,7 +92,7 @@ module Iface_test( valid_out, data_in, cap, valid_in, data_out, ready_out, clk, 
 
     DFKCNQD1 fsm0_state_reg_1_( .CN( n49 ), .D( n8 ), .CP( clk ), .Q( fsm0_state_1_ ) );
     DFKCNQD1 fsm0_state_reg_0_( .CN( n7 ), .D( fsm0_nextState_0_ ), .CP( clk ), .Q( fsm0_state_0_ ) );
-    DFKCNQD1 fsm1_state_reg_1_( .CN( n51 ), .D( n8 ), .CP( clk ), .Q( fsm1_state_1_ ) );
+    DFKCNQD1 fsm1_state_reg_1_( .CN( 1 ), .D( n8 ), .CP( clk ), .Q( fsm1_state_1_ ) );
     DFKCNQD1 fsm1_state_reg_0_( .CN( n6 ), .D( fsm1_nextState_0_ ), .CP( clk ), .Q( fsm1_state_0_ ) );
     DFKCNQD1 q_capacity_reg_0_( .CN( n8 ), .D( n47 ), .CP( clk ), .Q( cap[0] ) );
     DFQD1 q_capacity_reg_2_( .D( n5 ), .CP( clk ), .Q( cap[2] ) );
@@ -147,7 +147,7 @@ module Iface_test( valid_out, data_in, cap, valid_in, data_out, ready_out, clk, 
     INVD1 U81( .I( q_head_0_ ), .ZN( n53 ) );
     AOI22D1 U82( .A1( q_head_0_ ), .A2( q_entry[19] ), .B1( q_entry[13] ), .B2( n53 ), .ZN( n54 ) );
     AOI221D1 U83( .A1( q_entry[7] ), .A2( q_head_0_ ), .B1( q_entry[1] ), .B2( n53 ), .C( q_head_1_ ), .ZN( n55 ) );
-    AOI21D1 U84( .A1( q_head_1_ ), .A2( ECO_0 ), .B( n55 ), .ZN( n56 ) );
+    AOI21D1 U84( .A1( q_head_1_ ), .A2( n54 ), .B( n55 ), .ZN( n56 ) );
     AO22D1 U85( .A1( data_in[1] ), .A2( n93 ), .B1( n90 ), .B2( n56 ), .Z( data_out[1] ) );
     INVD1 U86( .I( q_head_0_ ), .ZN( n57 ) );
     AOI22D1 U87( .A1( q_head_0_ ), .A2( q_entry[20] ), .B1( q_entry[14] ), .B2( n57 ), .ZN( n58 ) );
@@ -197,10 +197,10 @@ module Iface_test( valid_out, data_in, cap, valid_in, data_out, ready_out, clk, 
     OA21D1 U132( .A1( n98 ), .A2( q_tail_0_ ), .B( n94 ), .Z( n44 ) );
     AOI21D1 U133( .A1( n97 ), .A2( n96 ), .B( n95 ), .ZN( n42 ) );
     NR2D1 U134( .A1( reset ), .A2( n49 ), .ZN( n7 ) );
-    NR2D1 U135( .A1( reset ), .A2( n51 ), .ZN( n6 ) );
+    NR2D1 U135( .A1( reset ), .A2( 1 ), .ZN( n6 ) );
     ND3D1 U136( .A1( q_tail_0_ ), .A2( n98 ), .A3( n8 ), .ZN( n100 ) );
     IND3D1 U137( .A1( q_tail_0_ ), .B1( n98 ), .B2( n8 ), .ZN( n99 ) );
     MUX4D1 U138( .I0( q_entry[0] ), .I1( q_entry[6] ), .I2( q_entry[12] ), .I3( q_entry[18] ), .S0( q_head_0_ ), .S1( q_head_1_ ), .Z( q_N21 ) );
     MYINVD1 U139( .I( cap[0] ), .ZN( n84 ) );
-    XNR3D1 ECO_XNR3D1( .A1( 1 ), .A3( n51 ), .A2( n54 ), .ZN( ECO_0 ) );
+    XNR3D1 ECO_XNR3D1( .A1( 1 ), .A3( n51 ), .A2( n54 ), .ZN( 1 ) );
 endmodule

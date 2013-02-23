@@ -7,6 +7,7 @@ import PortOut
 import PortClk
 import pprint
 import os
+import myutils
 
 class TestNetlist(unittest.TestCase):
 
@@ -22,10 +23,9 @@ class TestNetlist(unittest.TestCase):
 	vtest = \
 """
 module TOP( in, out );
-input [1:0] in;
-output [1:0] out;
-INVD1 U0( .I( in[0] ), .ZN( out[0] ) );
-INVD1 U1( .I( in[1] ), .ZN( out[1] ) );
+input  in;
+output  out;
+INVD1 U0( .I( in ), .ZN( out ) );
 endmodule
 """
 
@@ -58,7 +58,7 @@ INVD1:
 	nl2.readVerilog( 'new_test.v' )
 	nl2.link( 'TOP' )
 
-	self.assertEqual(nl1, nl2)
+	raise NotImplementedError
 
 	os.system('rm -rf test.v new_test.v test.yml')
 
@@ -209,6 +209,112 @@ INVD1:
 	self.assertEqual( submods, set([]) )
 
 	os.system('rm -rf test.v test.yml')
+
+
+    def test_deep(self):
+	""" test find deep obj """
+
+	vtest = \
+"""
+module TOP( in, out );
+input  in;
+output out;
+MYINV U0( .I( in ), .ZN( out ) );
+endmodule
+module MYINV( I, ZN );
+input I;
+output ZN;
+wire W0;
+INVD1 U0( .I( I ), .ZN( W0 ));
+INVD1 U1( .I( W0 ), .ZN( ZN ));
+endmodule
+"""
+
+	ytest = \
+"""
+INVD1:
+  inputs:
+    I: 1
+  outputs:
+    ZN: 1
+  primitive: not I
+"""
+
+        VFH = open( 'test.v' , 'w' )
+        VFH.write( vtest )
+        VFH.close()
+
+        YFH = open( 'test.yml' , 'w' )
+        YFH.write( ytest )
+        YFH.close()
+
+	nl1 = Netlist.Netlist()
+	nl1.readYAML('test.yml')
+	nl1.readVerilog('test.v')
+
+	nl1.link('TOP')
+
+	# find deep port obj
+	obj = myutils.deepobj('U0/U0/I', dtype='port')
+
+	# find deep cell obj
+	obj = myutils.deepobj('U0/U0', dtype='cell')
+
+	# find deep net obj
+	obj = myutils.deepobj('U0/U0/W0', dtype='wire')
+
+	os.system('rm -rf test.v test.yml')
+
+
+    def test_hiername(self):
+	""" test find hier name """
+
+	vtest = \
+"""
+module TOP( in, out );
+input  in;
+output out;
+MYINV U0( .I( in ), .ZN( out ) );
+endmodule
+module MYINV( I, ZN );
+input I;
+output ZN;
+INVD1 U0( .I( I ), .ZN( ZN ));
+endmodule
+"""
+
+	ytest = \
+"""
+INVD1:
+  inputs:
+    I: 1
+  outputs:
+    ZN: 1
+  primitive: not I
+"""
+
+        VFH = open( 'test.v' , 'w' )
+        VFH.write( vtest )
+        VFH.close()
+
+        YFH = open( 'test.yml' , 'w' )
+        YFH.write( ytest )
+        YFH.close()
+
+	nl1 = Netlist.Netlist()
+	nl1.readYAML('test.yml')
+	nl1.readVerilog('test.v')
+
+	nl1.link('TOP')
+	submods = nl1.findSubModules()
+	self.assertEqual( submods, set(['MYINV']) )
+
+	nl1.link('MYINV')
+	submods = nl1.findSubModules()
+	self.assertEqual( submods, set([]) )
+
+	os.system('rm -rf test.v test.yml')
+
 
 
     def test_miss_wire_exception_raise(self):
@@ -420,6 +526,7 @@ INVD1:
 #	print repr(context.exception)
 
 	os.system('rm -rf test.v test.yml')
+
 
 
 if __name__=='__main__':

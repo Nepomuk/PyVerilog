@@ -16,11 +16,6 @@ class Module(Generic):
         self.__nets  = OrderedDict()
         self.__ports = OrderedDict()
 
-
-
-    def __eq__(self, other):
-    	return cmp(self, other) == 0
-
     cells = property(lambda self: self.__cells)
     nets  = property(lambda self: self.__nets)
     ports = property(lambda self: self.__ports)

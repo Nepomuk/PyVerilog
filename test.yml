@@ -1,0 +1,7 @@
+
+INVD1:
+  inputs:
+    I: 1
+  outputs:
+    ZN: 1
+  primitive: not I

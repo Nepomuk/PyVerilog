@@ -65,15 +65,6 @@ class Netlist(object):
         self.__topMod = None
         self.__yaml = {}
 
-    def __eq__(self, other):
-    	bool_topMode = cmp(self.__topMod, other.topMod) == 0
-
-	def sub_eq():
-	    self_mods = self.__mods.keys()
-	    other_mods = other.__mods.keys()
-
-    def __lt__(self, other):
-    	pass
 
     def link(self, topModule):
         " link the design together"
@@ -275,6 +266,44 @@ class Netlist(object):
         self.checkOutputPorts()
 	self.checkConnectionDriver()
 	#self.checkConnectionWidth()
+
+    def hiername(self, obj, names=[]):
+	""" get hier name from deep obj """
+
+	if isinstance(obj, Net):
+	   pass
+
+	elif isinstance(obj, Pin.Pin):
+	   names.append(pin.portname)
+	   new_obj = obj.cell
+	   hiername(new_obj, names)
+
+	elif isinstance(obj, Cell.Cell):
+	   names.append(obj.submodname)
+	   new_obj = obj.submod
+	   hiername(new_obj, names)
+
+	return names
+
+    def deepobj(self, name, dtype=None):
+	""" get deep object from hier name """
+
+	names = name.split('/')
+	cur_mod = self.__topMod
+
+	while names:
+	    if len(names) == 1:
+		if dtype == 'port':
+
+		elif dtype == 'cell':
+		elif dtype == 'net':
+		names.pop(0)
+	    else:
+		i = names.pop(0)
+		submod = self.__mods[i]
+		mod.cells[i].linkMod(submod)
+
+	return obj
 
     def addModule(self, mod):
         modname = mod.name
