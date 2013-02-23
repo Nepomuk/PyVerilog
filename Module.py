@@ -10,11 +10,16 @@ class Module(Generic):
     def __init__(self, attrs):
         attrs["module"] = self
         Generic.__init__(self, attrs)
-        
+
         # to be linked
         self.__cells = OrderedDict()
         self.__nets  = OrderedDict()
         self.__ports = OrderedDict()
+
+
+
+    def __eq__(self, other):
+    	return cmp(self, other) == 0
 
     cells = property(lambda self: self.__cells)
     nets  = property(lambda self: self.__nets)
@@ -23,7 +28,7 @@ class Module(Generic):
     #link!
     def new_cell(self, cellAttr):
         cellAttr["module"] = self
-        # create new cell here     
+        # create new cell here
         cell = Cell.Cell(cellAttr)
         self.__cells[cell.name] = cell
         return cell

@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import Module
 import PortIn
 import PortOut
@@ -13,7 +15,7 @@ import myutils
 from collections import defaultdict
 ################################################################################
 ################################################################################
-class Netlist:
+class Netlist(object):
     """
     This class is a Python datastructure for storing/querying Verilog
     netlists.
@@ -63,6 +65,15 @@ class Netlist:
         self.__topMod = None
         self.__yaml = {}
 
+    def __eq__(self, other):
+    	bool_topMode = cmp(self.__topMod, other.topMod) == 0
+
+	def sub_eq():
+	    self_mods = self.__mods.keys()
+	    other_mods = other.__mods.keys()
+
+    def __lt__(self, other):
+    	pass
 
     def link(self, topModule):
         " link the design together"
@@ -162,8 +173,13 @@ class Netlist:
     def checkConnectionWidth(self):
     	""" check all connection width """
 
-        mod = self.__mods[self.__topMod]
+	raise NotImplementedError, """
+# the parser will reconginze the pin "in" in INVDID1 U0 to a new pp without the in.
+# because the parser will feed the "in" to expassion case like "in[1:0]" will be in[1], in[0] for each one has it's own pp
+# so, the in pp will not be linked when the build up pase.
+"""
 
+        mod = self.__mods[self.__topMod]
 	missing = []
 
         for cell in mod.cells:
@@ -219,22 +235,24 @@ class Netlist:
                 net = mod.cells[cell].pins[pin].net
 
 		if isinstance(pp.port, PortOut.PortOut):
+		    # the cur cell port is connect to top module ports or not
 		    if len(net.fanout) == 0:
 			if pp.netname not in top_ports:
 			    missing_fout[cell].append('(' + pp.portname + ',' + pp.netname + ')')
 
-		    # if the fanout is connected to the internal cells
+		    # if fanout is connected to the internal cells
 		    for fout in net.fanout:
 			if fout.portname == None:
 			    if fout.netname not in top_ports:
 			    	missing_fout[cell].append('(' + pp.portname + ',' + pp.netname + ')')
 
 		if isinstance(pp.port, PortIn.PortIn) or isinstance(pp.port, PortClk.PortClk):
+		    # the cur cell port is connect to top module ports or not
 		    if len(net.fanin) == 0:
 			if pp.netname not in top_ports:
 			   missing_fin[cell].append('(' + pp.portname + ',' + pp.netname + ')')
 
-		    # if the fanin is connected to the internal cells
+		    # if fanin is connected to the internal cells
 		    for fin in net.fanin:
 			if fin.portname == None:
 			    if fin.netname not in top_ports:
@@ -256,7 +274,7 @@ class Netlist:
         self.checkInputPorts()
         self.checkOutputPorts()
 	self.checkConnectionDriver()
-	self.checkConnectionWidth()
+	#self.checkConnectionWidth()
 
     def addModule(self, mod):
         modname = mod.name

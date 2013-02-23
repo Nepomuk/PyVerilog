@@ -5,6 +5,11 @@ class Generic(object):
         self.__name   = self.get("name")
         self.__module = self.get("module")
 
+    def __eq__(self, other):
+	if self.__name == other.name and \
+	   self.__module == other.module:
+	       return True
+	return False
 
     def get(self, name, require=True):
         ret = None

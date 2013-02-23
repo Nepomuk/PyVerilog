@@ -2,10 +2,9 @@
 XNR3D1:
   inputs:
     A1: 1
-    A2: 1
-    A3: U118/ZN
+    A2: n54
+    A3: n51
   outputs:
-    ZN: U135/A2, fsm1_state_reg_1_/CN
+    ZN: n51, n54
   primitive: not((A1 and (not A2) and (not A3)) or ((not A1) and A2 and (not A3)) or ((not A1) and (not A2) and A3))
 
-#
