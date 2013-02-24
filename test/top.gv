@@ -1,0 +1,11 @@
+module TOP( in, out );
+input  in;
+output out;
+MYINV U0( .I0( in ), .ZN0( out ) );
+endmodule
+module MYINV( I0, ZN0 );
+input I0;
+output ZN0;
+INVD1 U1( .I( I0 ), .ZN( W0 ));
+INVD1 U2( .I( W0 ), .ZN( ZN0 ));
+endmodule

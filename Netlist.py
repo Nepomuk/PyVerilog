@@ -4,6 +4,10 @@ import Module
 import PortIn
 import PortOut
 import PortClk
+import Net
+import Pin
+import Port
+import Cell
 import ConfigParser
 from ordereddict import OrderedDict
 import os
@@ -31,28 +35,12 @@ class Netlist(object):
     the a few of the netlist properties match.
 
     >>> nl1 = Netlist()
-    >>> nl2 = Netlist()
-    >>> nl1.readYAML("test/gates.yml")
-    >>> nl2.readYAML("test/gates.yml")
-    >>> nl1.readVerilog("test/Iface_test.gv")
-    >>> nl2.readYAML("test/Iface_test.yml")
-    >>> nl1.link("MYINVD1")
+    >>> nl1.readYAML("test.yml")
+    >>> nl1.readVerilog("test/top.gv")
+    >>> nl1.buildup("TOP")
     >>> nl1.topMod
-    'MYINVD1'
-    >>> nl1.link("Iface_test")
-    >>> nl2.link("Iface_test")
-    >>> nl1.topMod
-    'Iface_test'
-    >>> nl2.topMod
-    'Iface_test'
+    'TOP'
     >>> mod1 = nl1.mods[nl1.topMod]
-    >>> mod2 = nl2.mods[nl2.topMod]
-    >>> set(mod1.ports.keys()) == set(mod2.ports.keys())
-    True
-    >>> set(mod1.cells.keys()) != set(mod2.cells.keys())
-    True
-    >>> set(mod1.nets.keys()) == set(mod2.nets.keys())
-    True
     >>> nl1.checkDesign()
     """
 
@@ -64,12 +52,17 @@ class Netlist(object):
         self.__mods = {}
         self.__topMod = None
         self.__yaml = {}
+	self.__modstack =[]
 
 
     def link(self, topModule):
-        " link the design together"
+	self.__topMod = topModule
+
+
+    def buildup(self, topModule):
+        " buildup the design together"
         if topModule not in self.__mods:
-            raise Exception(str("link error, " + topModule +
+            raise Exception(str("buildup error, " + topModule +
                                 " has not been defined"))
 
         mod = self.__mods[topModule]
@@ -81,7 +74,7 @@ class Netlist(object):
                 missing.add(mod.cells[cell].submodname)
 
         if len(missing) > 0:
-            raise Exception(str("link error, " +
+            raise Exception(str("buildup error, " +
                                 str(missing) +
                                 " have not been defined"))
 
@@ -99,18 +92,29 @@ class Netlist(object):
                 else:
                     net.setFanin(mod.cells[cell].pins[pin])
 
-        self.__topMod = topModule
+        self.__modstack.append(topModule)
+	self.__topMod = topModule
+
+	for submm, subcell in self.findSubModules():
+	    # set module hier(top/sub) link and it's unique name
+            top_mod = self.__mods[self.__topMod]
+	    sub_mod = self.__mods[submm]
+
+	    self.buildup(submm)
+	    self.__modstack.pop(-1)
+
+        self.__topMod = self.__modstack[0]
 
 
     def findSubModules(self):
 	""" if the cur module has sub modules(cell) then return it """
-        submodules = set()
+        submodules = []
         mod = self.__mods[self.__topMod]
 
         # check all cells
         for cell in mod.cells:
             if mod.cells[cell].submodname not in self.__yaml.keys():
-                submodules.add(mod.cells[cell].submodname)
+                submodules.append((mod.cells[cell].submodname, cell))
 	return submodules
 
 
@@ -267,43 +271,45 @@ class Netlist(object):
 	self.checkConnectionDriver()
 	#self.checkConnectionWidth()
 
+
     def hiername(self, obj, names=[]):
-	""" get hier name from deep obj """
+	raise NotImplementedError, """
+# we only support top to down search, because the mod could have the different uniqu cell name,
+such as INV1 U0(); ... INV1 U1();.. . cell U0, U1 have the same mod,
+in current design, we only record module one time in the same share link
+"""
 
-	if isinstance(obj, Net):
-	   pass
-
-	elif isinstance(obj, Pin.Pin):
-	   names.append(pin.portname)
-	   new_obj = obj.cell
-	   hiername(new_obj, names)
-
-	elif isinstance(obj, Cell.Cell):
-	   names.append(obj.submodname)
-	   new_obj = obj.submod
-	   hiername(new_obj, names)
-
-	return names
 
     def deepobj(self, name, dtype=None):
 	""" get deep object from hier name """
 
+	if dtype not in ['pin', 'port', 'cell', 'net']:
+	    raise Exception("deepobj not suppoty dtype(%s) [pin, port, cell, net]" %(dtype))
+
 	names = name.split('/')
-	cur_mod = self.__topMod
+	mod = self.__mods[self.__topMod]
 
 	while names:
-	    if len(names) == 1:
-		if dtype == 'port':
+	    name = names.pop(0)
 
+	    if len(names) == 0:
+		if dtype in ['port', 'pin']:
+		    return None if name not in mod.ports else mod.ports[name]
 		elif dtype == 'cell':
+		    return None if name not in mod.cells else mod.cells[name]
 		elif dtype == 'net':
-		names.pop(0)
+		    return None if name not in mod.nets else mod.nets[name]
+		else:
+		    raise Exception("deepobj foun %s, %s[port,pin,cell,net] error" %(name, dtype))
 	    else:
-		i = names.pop(0)
-		submod = self.__mods[i]
-		mod.cells[i].linkMod(submod)
+	        # check all cells
+	        find = False
+	        for cell in mod.cells:
+		    if cell == name:
+			mod = mod.cells[cell].submod
+			find = True
+		if find == False: return None
 
-	return obj
 
     def addModule(self, mod):
         modname = mod.name

@@ -16,9 +16,25 @@ class Module(Generic):
         self.__nets  = OrderedDict()
         self.__ports = OrderedDict()
 
+        self.__topmod = None
+        self.__submod = None
+	self.__uniq = None
+
     cells = property(lambda self: self.__cells)
     nets  = property(lambda self: self.__nets)
     ports = property(lambda self: self.__ports)
+    topmod = property(lambda self: self.__topmod)
+    submod = property(lambda self: self.__submod)
+    uniq = property(lambda self: self.__uniq)
+
+    def link_topmod(self, topmod):
+    	self.__topmod = topmod
+
+    def link_submod(self, submod):
+    	self.__submod = submod
+
+    def set_uniq(self, uniq):
+    	self.__uniq = uniq
 
     #link!
     def new_cell(self, cellAttr):

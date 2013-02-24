@@ -8,6 +8,11 @@ import PortClk
 import pprint
 import os
 import myutils
+import PortIn
+import PortOut
+import Cell
+import Net
+
 
 class TestNetlist(unittest.TestCase):
 
@@ -50,13 +55,13 @@ INVD1:
 	nl1 = Netlist.Netlist()
 	nl1.readYAML( 'test.yml' )
 	nl1.readVerilog( 'test.v' )
-	nl1.link( 'TOP' )
+	nl1.buildup( 'TOP' )
 	nl1.writeVerilog( 'new_test.v' )
 
 	nl2 = Netlist.Netlist()
 	nl2.readYAML( 'test.yml' )
 	nl2.readVerilog( 'new_test.v' )
-	nl2.link( 'TOP' )
+	nl2.buildup( 'TOP' )
 
 	raise NotImplementedError
 
@@ -95,7 +100,7 @@ INVD1:
 	nl1 = Netlist.Netlist()
 	nl1.readYAML( 'test.yml' )
 	nl1.readVerilog( 'test.v' )
-	nl1.link( 'TOP' )
+	nl1.buildup( 'TOP' )
 	self.assertEqual( nl1.topMod, 'TOP' )
 
 	mod = nl1.mods[nl1.topMod]
@@ -155,7 +160,7 @@ INVD1:
 	nl1.readVerilog('test.v')
 
 	with self.assertRaises(Exception) as context:
-	    nl1.link('TOP')
+	    nl1.buildup('TOP')
 	print context.exception
 
 	os.system('rm -rf test.v test.yml')
@@ -200,18 +205,15 @@ INVD1:
 	nl1.readYAML('test.yml')
 	nl1.readVerilog('test.v')
 
-	nl1.link('TOP')
-	submods = nl1.findSubModules()
-	self.assertEqual( submods, set(['MYINV']) )
+	nl1.buildup('TOP')
 
-	nl1.link('MYINV')
 	submods = nl1.findSubModules()
-	self.assertEqual( submods, set([]) )
+	self.assertEqual( submods, [('MYINV', 'U0')] )
 
 	os.system('rm -rf test.v test.yml')
 
 
-    def test_deep(self):
+    def test_deepobj(self):
 	""" test find deep obj """
 
 	vtest = \
@@ -219,14 +221,13 @@ INVD1:
 module TOP( in, out );
 input  in;
 output out;
-MYINV U0( .I( in ), .ZN( out ) );
+MYINV U0( .I0( in ), .ZN0( out ) );
 endmodule
-module MYINV( I, ZN );
-input I;
-output ZN;
-wire W0;
-INVD1 U0( .I( I ), .ZN( W0 ));
-INVD1 U1( .I( W0 ), .ZN( ZN ));
+module MYINV( I0, ZN0 );
+input I0;
+output ZN0;
+INVD1 U1( .I( I0 ), .ZN( W0 ));
+INVD1 U2( .I( W0 ), .ZN( ZN0 ));
 endmodule
 """
 
@@ -252,16 +253,29 @@ INVD1:
 	nl1.readYAML('test.yml')
 	nl1.readVerilog('test.v')
 
-	nl1.link('TOP')
+	nl1.buildup('TOP')
 
-	# find deep port obj
-	obj = myutils.deepobj('U0/U0/I', dtype='port')
+	# find deepest port obj in cell lib
+	obj = nl1.deepobj('U0/U1/I', dtype='port')
+	self.assertEqual(obj.name, 'I')
+	## no fanin in cell lib
+	self.assertEqual(obj.fanin, [])
+	## no fanout in cell lib
+	self.assertEqual(obj.fanout, [])
+	# cur module
+	self.assertEqual(obj.module.name, 'INVD1')
+
+	# find deepest sub module no in cell lib
+	obj = nl1.deepobj('U0/I0', dtype='port')
+	self.assertEqual(obj.name, 'I0')
 
 	# find deep cell obj
-	obj = myutils.deepobj('U0/U0', dtype='cell')
+	obj = nl1.deepobj('U0/U1', dtype='cell')
+	self.assertEqual(obj.name, 'U1')
 
 	# find deep net obj
-	obj = myutils.deepobj('U0/U0/W0', dtype='wire')
+	obj = nl1.deepobj('U0/W0', dtype='net')
+	self.assertEqual(obj.name, 'W0')
 
 	os.system('rm -rf test.v test.yml')
 
@@ -305,20 +319,12 @@ INVD1:
 	nl1.readYAML('test.yml')
 	nl1.readVerilog('test.v')
 
-	nl1.link('TOP')
-	submods = nl1.findSubModules()
-	self.assertEqual( submods, set(['MYINV']) )
-
-	nl1.link('MYINV')
-	submods = nl1.findSubModules()
-	self.assertEqual( submods, set([]) )
-
+	nl1.buildup('TOP')
 	os.system('rm -rf test.v test.yml')
 
 
-
     def test_miss_wire_exception_raise(self):
-	""" test miss wire link exception raise """
+	""" test miss wire buildup exception raise """
 
 	vtest = \
 """
@@ -350,7 +356,7 @@ INVD1:
 	nl1.readYAML('test.yml')
 	nl1.readVerilog('test.v')
 
-	nl1.link('TOP')
+	nl1.buildup('TOP')
 
 	os.system('rm -rf test.v test.yml')
 
@@ -388,7 +394,7 @@ INVD1:
 	nl1.readYAML('test.yml')
 	nl1.readVerilog('test.v')
 
-	nl1.link('TOP')
+	nl1.buildup('TOP')
 
 	with self.assertRaises(Exception) as context:
 	    nl1.checkInputPorts()
@@ -430,7 +436,7 @@ INVD1:
 	nl1.readYAML('test.yml')
 	nl1.readVerilog('test.v')
 
-	nl1.link('TOP')
+	nl1.buildup('TOP')
 
 	with self.assertRaises(Exception) as context:
 	    nl1.checkOutputPorts()
@@ -473,7 +479,7 @@ INVD1:
 	nl1.readYAML('test.yml')
 	nl1.readVerilog('test.v')
 
-	nl1.link('TOP')
+	nl1.buildup('TOP')
 
 	with self.assertRaises(Exception) as context:
 	    nl1.checkConnectionDriver()
@@ -515,11 +521,11 @@ INVD1:
 	nl1.readYAML('test.yml')
 	nl1.readVerilog('test.v')
 
-	nl1.link('TOP')
+	nl1.buildup('TOP')
 
 # the parser will reconginze the pin "in" in INVDID1 U0 to a new pp without the in.
 # because the parser will feed the "in" to expassion case like "in[1:0]" will be in[1], in[0] for each one has it's own pp
-# so, the in pp will not be linked when the build up pase.
+# so, the in pp will not be builduped when the build up pase.
 
 #	with self.assertRaises(Exception) as context:
 #	    nl1.checkConnectionWidth()
