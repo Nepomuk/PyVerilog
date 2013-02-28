@@ -98,5 +98,9 @@ class Net(Generic):
     def updateFanout(self, fanouts):
     	self.__fanout = fanouts
 
+    def delFanin(self, pin):
+    	self.__fanin.remove(pin)
 
+    def delFanout(self, pin):
+    	self.__fanout.remove(pin)
 

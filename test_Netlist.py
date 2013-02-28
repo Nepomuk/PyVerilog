@@ -258,16 +258,12 @@ INVD1:
 	# find deepest port obj in cell lib
 	obj = nl1.deepobj('U0/U1/I', dtype='port')
 	self.assertEqual(obj.name, 'I')
-	## no fanin in cell lib
-	self.assertEqual(obj.fanin, [])
-	## no fanout in cell lib
-	self.assertEqual(obj.fanout, [])
-	# cur module
-	self.assertEqual(obj.module.name, 'INVD1')
-
-	# find deepest sub module no in cell lib
-	obj = nl1.deepobj('U0/I0', dtype='port')
-	self.assertEqual(obj.name, 'I0')
+	# input port fain eq []
+	self.assertEqual(obj.net.fanin, [])
+	# output port fanout len=1
+	self.assertEqual(len(obj.net.fanout), 1)
+	# fanout to self input Pin
+	self.assertEqual(obj.net.fanout[0].name, 'I')
 
 	# find deep cell obj
 	obj = nl1.deepobj('U0/U1', dtype='cell')

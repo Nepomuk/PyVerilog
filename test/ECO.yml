@@ -3,8 +3,8 @@ XNR3D1:
   inputs:
     A1: 1
     A2: 0
-    A3: U81.ZN(n53)
+    A3: U81/ZN
   outputs:
-    ZN: U82.B2(n53)
+    ZN: U82/B2
   primitive: not((A1 and (not A2) and (not A3)) or ((not A1) and A2 and (not A3)) or ((not A1) and (not A2) and A3))
 

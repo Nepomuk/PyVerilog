@@ -1,7 +1,7 @@
 
 INVD1:
   inputs:
-    I: in[0]
+    I: ECO_in
   outputs:
-    ZN: in[0]
+    ZN: ECO_out
   primitive: not I

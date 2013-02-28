@@ -1,0 +1,799 @@
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10d796910>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10d71ef50>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10d71e5d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10d71ee90>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x107d0a910>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x107c92f50>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x107c92750>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x107c92410>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x107cc5e90>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10ff40910>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10ff022d0>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10fef8190>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10fef8210>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10fec85d0>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10fb38910>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10fac0f50>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10fac0750>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10fac0e90>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10faf3890>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10470e910>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x104696f50>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1046c6110>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x1046c6810>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x104667750>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x109077910>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x108fc7550>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1090735d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x109073d10>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x109035ad0>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10d10b910>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10d0933d0>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10d1071d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10d107790>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10d093fd0>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x102fff910>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x102f873d0>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x102ffb1d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x102ffb790>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x102f87e10>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10e779250>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10e76be90>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10e73f950>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10e73ffd0>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10e7795d0>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x103239750>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10322e310>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x103185a90>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x103185750>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x103235650>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10c718910>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10c6d3d10>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10c6d0cd0>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10c670210>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10c70dd50>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10c6a0a50>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10c6d0090>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10c7142d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10c714910>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10c6dd950>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10ff24310>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10ff164d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10fedc9d0>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10fe6b790>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10fe793d0>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10fee09d0>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10ff21250>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10fe9ae90>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10feea2d0>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10ff24fd0>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x105f79310>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x105f6b4d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x105f31690>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x105ecc2d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x105ebfad0>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x105f6b350>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x105f79710>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x105f72450>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x105f72250>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x105f6e510>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10682e310>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x1068204d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1067ed250>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x1067f0d90>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1067f0cd0>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x1067ead50>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x1067a4250>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1067a4590>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x1067a47d0>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x1067f4b50>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10e41e310>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10e4104d0>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10e413f90>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10e3e0a90>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10e3da8d0>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10e41b410>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10e417f90>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10e413050>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10e4137d0>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10e3a68d0>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x102688310>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10267a4d0>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10267df90>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10264a750>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1026448d0>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x102685410>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x102681690>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10263d410>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10263dd50>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x102610850>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10e6b7310>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10e6a94d0>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10e676390>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10e6b0e10>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10e66f790>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10e643510>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10e6a9b50>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10e643690>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10e643990>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10e6b0090>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10efb7310>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10efa94d0>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10ef76390>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10efb0e10>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10ef6f790>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10ef43510>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10efa9b50>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10ef43690>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10ef43810>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10efb0690>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10916d310>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10915f4d0>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10912c350>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x109125790>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x109122410>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x1090f9190>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10915fed0>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x109166450>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x109166a50>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10916a490>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10d3c7310>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10d3b94d0>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10d386390>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10d37c210>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10d37fbd0>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10d3c0f90>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10d3b9ed0>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10d3c01d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10d3c0bd0>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10d3c4950>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x109082310>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x1090744d0>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x109037cd0>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x109044a90>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10903e8d0>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x108fb8690>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10903a950>
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x109074950>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x1090747d0>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x109041f50>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10acf2310>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10ace44d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10acaa350>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10ac7aed0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10acef6d0>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10acaa910>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10ac7a5d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10ac37710>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10ac379d0>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10acaab10>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1018cb310>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x1018bd4d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10188a390>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x1018c4e10>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x101883c90>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x101857750>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x1018bdb50>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x101857450>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x101857290>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x1018c8210>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10fa63310>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10fa554d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10fa55750>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10f9ef350>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10f998590>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10f9eb150>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10f9ef2d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10f9eb2d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10fa1f510>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10fa1b310>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x108c2e310>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x108bbd590>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x108be3490>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x108be6e90>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x108c2ed90>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x108bb85d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x108bb8710>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x108b44650>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x108709750>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x108656f10>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x108701c10>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x1086c8a90>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x108709710>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1086c4350>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x1086c4e50>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x108662310>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10973c750>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x109734210>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x109731d10>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x109738250>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x1096fb6d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10973c390>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10973ce10>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x109695390>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10b897750>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10b7e4210>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10b7f0410>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10b8933d0>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10b81f1d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10b84f6d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10b84ffd0>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10b852110>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x100b5f310>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x100b14290>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x100b1b1d0>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x100b253d0>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x100b21c10>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x100aee4d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x100aee610>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x100b58f10>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10a55a750>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10a552310>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10a54fd10>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10a5568d0>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10a519d10>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10a4ab490>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10a55a7d0>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10a515a10>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x104367750>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10435c510>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1043291d0>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10435c890>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1042dfd10>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x1042b27d0>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x104322a90>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x104326f50>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x104326e10>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x1042b2cd0>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x11036c750>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x110361510>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x11036c150>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x110335390>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x110327650>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x110364550>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x11036c710>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x110361d10>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x110361890>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x110368490>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x103a57750>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x103a4c510>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1039a6750>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x103a4f090>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x103a12a90>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x103a57190>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x1039d0a10>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x103a53fd0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x103a53a90>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x1039a68d0>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x102cc8310>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x102cba4d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x102c80c50>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x102c15350>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x102c112d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x102c11dd0>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x102c83d50>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10a74ead0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10a74ea50>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10a7446d0>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x108d3de50>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x108d3df90>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x108d33950>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x11021fe50>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x11021ff90>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x110215950>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10cea4e50>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10cea4f90>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10ce9a950>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10088fe50>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10088ff90>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x100885950>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10f89fe50>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10f89ff90>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10f895950>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10766d250>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10766d150>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x107663710>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10a148310>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10a148210>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10a13a4d0>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x107553310>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x107553210>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x1075454d0>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10fae4810>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10fa9fa50>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10fa3a490>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10fa2dcd0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10fa2d610>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10fad9a10>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x101986810>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x101986850>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x101941c50>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10355b810>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10355b850>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x103516c50>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10c174810>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10c174850>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10c12fc50>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10fbaa810>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10fb65a50>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10fb00490>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10fb5b7d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10fb65610>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10fb6f910>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x108b6ba90>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x108ab8090>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x108ac35d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x108b26e90>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x108b266d0>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x108b204d0>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x108b34550>
+DEBUG:root:create new input port ECO_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x104445a90>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x104392090>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10439d5d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x104400810>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x104400510>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x1043fa4d0>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1044411d0>
+DEBUG:root:create new input port ECO_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10d7b6510>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10d7affd0>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10d7f3410>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10d7f37d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10d7f3a90>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10d7e6d90>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10d7ecb10>
+DEBUG:root:create new input port ECO_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10cf1a510>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10cf13fd0>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10cf57410>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10cf577d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10cf573d0>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10cee5690>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10cf5bfd0>
+DEBUG:root:create new input port ECO_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x105b53510>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x105b4cfd0>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x105b90410>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x105b1a5d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x105b1af10>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x105b94dd0>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x105b49150>
+DEBUG:root:create new input port ECO_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1043ae510>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x1043a7fd0>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x1043eb410>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x104332710>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x104332390>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x1043aa290>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x104382190>
+DEBUG:root:create new input port ECO_in in TOP module
+DEBUG:root:create new output port ECO_out in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x102f32510>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x102f2bfd0>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x102f6f410>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x102f32110>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x102f32f50>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x102efd9d0>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x102f28050>
+DEBUG:root:create new input port ECO_in in TOP module
+DEBUG:root:create new output port ECO_out in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x106e3f510>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x106e388d0>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x106dd5150>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x106e35450>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x106dcd990>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x106e31850>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x106e72d10>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x106dcd910>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10da94510>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10da8a550>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10da1e310>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10da22b10>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10da59fd0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10daca490>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10daca2d0>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10dace450>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1008e1310>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x100944e90>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x100988450>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x106671310>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x1066d4e90>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x106718450>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x104629310>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10468de90>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x1046d1450>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x108166a90>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1081293d0>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1080b5210>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x108122990>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10812f310>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1081630d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x108163090>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x1080b1ed0>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x105e7ba90>
+DEBUG:root:create new net 0 in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x105e3e150>
+DEBUG:root:create new input port new_in in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x105dc64d0>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x105e37790>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x105e7b810>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x105e411d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x105e41950>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x105e34b90>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x108c7d310>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x108ce1e90>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x108d25450>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W1
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x106203810>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x1061bea50>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10611b490>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x102793810>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10274ea50>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x1026ab490>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10a529810>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10a4e4a50>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10a441490>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x103aec810>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x103aa7a50>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x103a04490>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10d646810>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10d601a50>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10d55e490>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x109a4c810>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x109a07a50>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x109964490>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x103d35810>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x103cf0a50>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x103c4d490>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x1013f0310>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x101455e90>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x101499450>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10b221810>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10b1dca50>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10b139490>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10fb1f810>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10fadaa50>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10fa37490>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10396d310>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x1039d2e90>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x103a16450>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10a122a90>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10a06e090>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10a0785d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10a0e88d0>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10a0eb5d0>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10a09bed0>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10a089c10>
+DEBUG:root:create new input port ECO_in in TOP module
+DEBUG:root:create new output port ECO_out in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10fdb3a90>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10fcff090>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10fd095d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10fda6690>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10fda6950>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10fd68210>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10fda6410>
+DEBUG:root:create new input port ECO_in in TOP module
+DEBUG:root:create new output port ECO_out in TOP module
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10e3ea310>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10e44fe90>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10e493450>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x108e12a90>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x108d5f090>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x108d695d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x103dd2a90>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x103d1f090>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x103d295d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10c1d7a90>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10c124090>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10c12e5d0>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10bde9510>
+DEBUG:root:find InputMaps eco cell pin I, <PortIn.PortIn object at 0x10bde9610>
+DEBUG:root:find OutputMaps eco cell pin ZN <Pin.Pin object at 0x10be1ce90>
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net/port in[0]
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10bde9490>
+DEBUG:root:find InputMaps eco cell pin I, <Pin.Pin object at 0x10bd9b490>
+DEBUG:root:find OutputMaps eco cell pin ZN <PortOut.PortOut object at 0x10bddf650>
+DEBUG:root:create ECO cell ECO_INVD1 new output pin ZN connect net/port out[0]
+DEBUG:root:create ECO cell ECO_INVD1 new input pin I, connect net ECO_W0
+DEBUG:root:buildup ECO cell in TOP cell INVD1 <Cell.Cell object at 0x10bd934d0>
+DEBUG:root:create new input port ECO_in in TOP module
+DEBUG:root:create new output port ECO_out in TOP module

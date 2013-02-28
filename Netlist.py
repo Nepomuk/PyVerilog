@@ -286,29 +286,36 @@ in current design, we only record module one time in the same share link
 	if dtype not in ['pin', 'port', 'cell', 'net']:
 	    raise Exception("deepobj not suppoty dtype(%s) [pin, port, cell, net]" %(dtype))
 
-	names = name.split('/')
+	names = str(name).split('/')
 	mod = self.__mods[self.__topMod]
+	cur_cell = None
 
 	while names:
 	    name = names.pop(0)
 
 	    if len(names) == 0:
 		if dtype in ['port', 'pin']:
-		    return None if name not in mod.ports else mod.ports[name]
+		    # check it's port or cell, if it's in top module return port else return pin
+		    if cur_cell:
+			return None if name not in cur_cell.pins else cur_cell.pins[name]
+		    else:
+		    	return None if name not in mod.ports else mod.ports[name]
 		elif dtype == 'cell':
 		    return None if name not in mod.cells else mod.cells[name]
 		elif dtype == 'net':
 		    return None if name not in mod.nets else mod.nets[name]
 		else:
-		    raise Exception("deepobj foun %s, %s[port,pin,cell,net] error" %(name, dtype))
+		    raise Exception("deepobj foun %s, %s [port,cell,net] error" %(name, dtype))
 	    else:
 	        # check all cells
-	        find = False
+	        found = False
 	        for cell in mod.cells:
 		    if cell == name:
+		    	cur_cell = mod.cells[cell]
 			mod = mod.cells[cell].submod
-			find = True
-		if find == False: return None
+			found = True
+		if not found:
+		    return None
 
 
     def addModule(self, mod):
@@ -335,7 +342,7 @@ in current design, we only record module one time in the same share link
         ports = set()
         minBit = {}
         maxBit = {}
-        for p in tm.ports.values():
+        for p in sorted(tm.ports.values()):
             if p.busMember:
                 ports.add( ( p.busName, p.direction ) )
                 if p.busName in minBit:
@@ -355,7 +362,7 @@ in current design, we only record module one time in the same share link
         lines.append( '' )
 
         # declare i/o ports
-        for ( portName, dirxn ) in ports:
+        for ( portName, dirxn ) in sorted(ports):
             if portName in minBit:
                 assert minBit[ portName ] == 0
                 l = minBit[ portName ]
@@ -372,12 +379,15 @@ in current design, we only record module one time in the same share link
         minBit = {}
         maxBit = {}
         nets = set()
-        for n in tm.nets.values():
+        for n in sorted(tm.nets.values()):
               if n.busMember:
                   nets.add( n.busName )
                   if n.busName in minBit:
                       l = minBit[ n.busName ]
                       r = maxBit[ n.busName ]
+                      print type(n.bitIdx)
+                      print type(l)
+                      print '----'
                       assert int( n.bitIdx ) != l
                       assert int( n.bitIdx ) != r
                       if int( n.bitIdx ) < l: minBit[ n.busName ] = int ( n.bitIdx )
@@ -388,7 +398,7 @@ in current design, we only record module one time in the same share link
               else:
                   nets.add( n.name )
 
-        for netName in nets:
+        for netName in sorted(nets):
             if netName in minBit:
                 #assert minBit[ netName ] == 0
                 l = minBit[ netName ]
@@ -399,9 +409,9 @@ in current design, we only record module one time in the same share link
         lines.append( '' )
 
         # instantiate the cells
-        for c in tm.cells.values():
+	for c in sorted(tm.cells.values(), key=lambda k: k.name):
             ports = []
-            for p in c.pins.values():
+	    for p in sorted(c.pins.values(), key=lambda k: k.name):
                 ports.append( '.%s( %s )' % ( p.name, p.net.name ))
             ports = ', '.join( ports )
             lines.append( '    %s %s( %s );' % ( c.submodname, c.name, ports ))
