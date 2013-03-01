@@ -69,8 +69,8 @@ class TestECO(unittest.TestCase):
 	os.system('rm -rf *.v *.yml')
 
 
-    def test_module_INV_new_cell(self):
-    	""" test moudle INV new cell  """
+    def test_eco_add_new_top_inoutport(self):
+	""" test moudle add new inoutput port """
 
 	vtest = \
 """
@@ -83,6 +83,14 @@ endmodule
 """
 	ytest = \
 """
+AN2D1:
+  inputs:
+    A1: 1
+    A2: 1
+  outputs:
+    Z: 1
+  primitive: A1 and A2
+
 INVD1:
   inputs:
     I: 1
@@ -92,25 +100,27 @@ INVD1:
 """
 	etest = \
 """
-INVD1:
+AN2D1:
   inputs:
-    I: ECO_in
+    A1: new_in
+    A2: in[0]
   outputs:
-    ZN: ECO_out
-  primitive: not I
+    Z:  new_out
+  primitive: A1 and A2
 """
+
 	exptest = \
 """
-module TOP( in, out );
+module TOP( new_in, new_out, in, out );
 
     output [  1: 0 ] out;
-    output ECO_out
     input  [  1: 0 ] in;
-    input ECO_in
+    input new_in;
+    output new_out;
 
+    AN2D1 ECO_AN2D1( .A1( new_in ), .A2( in[0]), .Z( new_out ) );
     INVD1 U0( .I( in[0] ), .ZN( out[0] ) );
     INVD1 U1( .I( in[1] ), .ZN( out[1] ) );
-    INVD1 ECO_INVD1( .I( ECO_in ), .ZN( ECO_out ) );
 endmodule
 """
 
@@ -128,9 +138,8 @@ endmodule
 		EXPVERILOG  = 'exptest.v',
 	    )
 
-
-    def test_module_INV_input_to_cell(self):
-    	""" test moudle INV input to cell """
+    def test_eco_add_new_top_inport(self):
+	""" test adding new input port to top module """
 
 	vtest = \
 """
@@ -143,6 +152,14 @@ endmodule
 """
 	ytest = \
 """
+AN2D1:
+  inputs:
+    A1: 1
+    A2: 1
+  outputs:
+    Z: 1
+  primitive: A1 and A2
+
 INVD1:
   inputs:
     I: 1
@@ -152,23 +169,26 @@ INVD1:
 """
 	etest = \
 """
-INVD1:
+AN2D1:
   inputs:
-    I: in[0]
+    A1: new_in
+    A2: in[0]
   outputs:
-    ZN: U0/I
-  primitive: not I
+    Z:  U0/I
+  primitive: A1 and A2
 """
+
 	exptest = \
 """
-module TOP( in, out );
+module TOP( new_in, in, out );
 
     output [  1: 0 ] out;
     input  [  1: 0 ] in;
+    input new_in;
 
     wire ECO_W0;
 
-    INVD1 ECO_INVD1( .I( in[0] ), .ZN( ECO_W0 ) );
+    AN2D1 ECO_AN2D1( .A1( new_in ), .A2( in[0]), .Z( ECO_W0 ) );
     INVD1 U0( .I( ECO_W0 ), .ZN( out[0] ) );
     INVD1 U1( .I( in[1] ), .ZN( out[1] ) );
 endmodule
@@ -189,8 +209,8 @@ endmodule
 	    )
 
 
-    def test_module_INV_cell_to_output(self):
-    	""" test moudle INV cell to output """
+    def test_eco_add_new_top_outport(self):
+	""" test adding new output port to top module """
 
 	vtest = \
 """
@@ -203,6 +223,14 @@ endmodule
 """
 	ytest = \
 """
+AN2D1:
+  inputs:
+    A1: 1
+    A2: 1
+  outputs:
+    Z: 1
+  primitive: A1 and A2
+
 INVD1:
   inputs:
     I: 1
@@ -212,13 +240,15 @@ INVD1:
 """
 	etest = \
 """
-INVD1:
+AN2D1:
   inputs:
-    I: U0/ZN
+    A1: in[0]
+    A2: U0/ZN
   outputs:
-    ZN: out[0]
-  primitive: not I
+    Z:  out[0]
+  primitive: A1 and A2
 """
+
 	exptest = \
 """
 module TOP( in, out );
@@ -230,7 +260,7 @@ module TOP( in, out );
 
     INVD1 U0( .I( in[0] ), .ZN( ECO_W0 ) );
     INVD1 U1( .I( in[1] ), .ZN( out[1] ) );
-    INVD1 ECO_INVD1( .I( ECO_W0 ), .ZN( out[0] ) );
+    AN2D1 ECO_AN2D1( .A1( in[0] ), .A2( ECO_W0 ), .Z( out[0] ) );
 endmodule
 """
 
@@ -248,13 +278,95 @@ endmodule
 		EXPVERILOG  = 'exptest.v',
 	    )
 
+
+    def test_eco_add_new_net_net(self):
+	""" test adding new net to net """
+
+	vtest = \
+"""
+module TOP( in, out );
+input in;
+output out;
+wire W0;
+INVD1 U0( .I( in ), .ZN( W0 ) );
+INVD1 U1( .I( W0 ), .ZN( out ) );
+endmodule
+"""
+	ytest = \
+"""
+AN2D1:
+  inputs:
+    A1: 1
+    A2: 1
+  outputs:
+    Z: 1
+  primitive: A1 and A2
+
+INVD1:
+  inputs:
+    I: 1
+  outputs:
+    ZN: 1
+  primitive: not I
+"""
+	etest = \
+"""
+AN2D1:
+  inputs:
+    A1: eco_in
+    A2: U0/ZN
+  outputs:
+    Z:  U1/I
+  primitive: A1 and A2
+"""
+
+	exptest = \
+"""
+module TOP( eco_in, in, out );
+
+    output  out;
+    input   in;
+    input   eco_in;
+
+    wire ECO_W0;
+    wire w0;
+
+    INVD1 U0( .I( in ), .ZN( W0 ) );
+    INVD1 U1( .I( ECO_W0 ), .ZN( out ) );
+    AN2D1 ECO_AN2D1( .A1( eco_in ), .A2( W0 ), .Z( ECO_W0 ) );
+endmodule
+"""
+
+	self._genTestNetList(vtest, 'test.v')
+	self._genTestCellLib(ytest, 'test.yml')
+	self._genTestECORule(etest, 'etest.yml')
+	self._genTestExpList(exptest, 'exptest.v')
+
+	self._runECOCmpExp(
+		CELLLIB	    = 'test.yml',
+		ORGVERILOG  = 'test.v',
+		TOPMODULE   = 'TOP',
+		ECO	    = 'etest.yml',
+		ECOVERILOG  = 'ecotest.v',
+		EXPVERILOG  = 'exptest.v',
+	    )
+
+
+
 def suite():
-    tests = ['test_module_INV_input_to_cell', \
-    	    'test_module_INV_cell_to_output',\
-    	    'test_module_INV_new_cell',]
+
+    tests = [
+    	#'test_eco_add_new_top_assign',
+	'test_eco_add_new_top_inport',
+	'test_eco_add_new_top_outport',
+	'test_eco_add_new_top_inoutport',
+    	#'test_eco_add_new_net_input',
+    	#'test_eco_add_new_net_output',
+    	'test_eco_add_new_net_net',
+	]
+
     return unittest.TestSuite(map(TestECO, tests))
 
 
 if __name__=='__main__':
     unittest.main(defaultTest='suite')
-#    unittest.main()

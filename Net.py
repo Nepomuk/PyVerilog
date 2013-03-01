@@ -29,48 +29,48 @@ class Net(Generic):
         self.__fanin = []
         self.__fanout = []
 
-    def __eq__(self, other):
-	raise NotImplementedError, """
-# maybe we should use graph alg to comapre two diff graphs
-"""
-
-    	bool_width = self.__width == other.width
-        bool_msb   = self.__msb   == other.msb
-    	bool_lsb   = self.__lsb   == other.lsb
-	bool_bitIdx= self.__bitIdx == other.bitIdx
-	bool_busName = self.__busName == other.busName
-	bool_busMember = self.__busMember == other.busMember
-	bool_module = self.__module == other.module
-
-	def cmp_fanin():
-	    if len(self.__fanin) != len(other.fanin):
-	    	return False
-	    else:
-		self_fanin = sorted([i.net.portname for i in self.__fanin])
-		other_fanin = sorted([i.net.portname for i in other.fanin])
-		return cmp(self_fanin, other_fanin) == 0
-
-	def cmp_fanout():
-	    if len(self.__fanout) != len(other.fanout):
-	    	return False
-	    else:
-		self_fanout = sorted([i.net.portname for i in self.__fanin])
-		other_fanout = sorted([i.net.portname for i in other.fanin])
-		return cmp(self_fanout, other_fanout) == 0
-
-	bool_fanin = cmp_fanin()
-	bool_fanout = conp_fanout()
-
-	if bool_fanout and \
-	   bool_fanin and \
-	   bool_width and \
-	   bool_msb and \
-	   bool_lsb and \
-	   bool_bitIdx and \
-	   bool_busName and \
-	   bool_module:
-	       return True
-	return False
+#    def __eq__(self, other):
+#	raise NotImplementedError, """
+## maybe we should use graph alg to comapre two diff graphs
+#"""
+#
+#    	bool_width = self.__width == other.width
+#        bool_msb   = self.__msb   == other.msb
+#    	bool_lsb   = self.__lsb   == other.lsb
+#	bool_bitIdx= self.__bitIdx == other.bitIdx
+#	bool_busName = self.__busName == other.busName
+#	bool_busMember = self.__busMember == other.busMember
+#	bool_module = self.__module == other.module
+#
+#	def cmp_fanin():
+#	    if len(self.__fanin) != len(other.fanin):
+#	    	return False
+#	    else:
+#		self_fanin = sorted([i.net.portname for i in self.__fanin])
+#		other_fanin = sorted([i.net.portname for i in other.fanin])
+#		return cmp(self_fanin, other_fanin) == 0
+#
+#	def cmp_fanout():
+#	    if len(self.__fanout) != len(other.fanout):
+#	    	return False
+#	    else:
+#		self_fanout = sorted([i.net.portname for i in self.__fanin])
+#		other_fanout = sorted([i.net.portname for i in other.fanin])
+#		return cmp(self_fanout, other_fanout) == 0
+#
+#	bool_fanin = cmp_fanin()
+#	bool_fanout = conp_fanout()
+#
+#	if bool_fanout and \
+#	   bool_fanin and \
+#	   bool_width and \
+#	   bool_msb and \
+#	   bool_lsb and \
+#	   bool_bitIdx and \
+#	   bool_busName and \
+#	   bool_module:
+#	       return True
+#	return False
 
     width   = property(lambda self: self.__width)
     msb     = property(lambda self: self.__msb)

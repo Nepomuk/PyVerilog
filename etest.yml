@@ -1,7 +1,8 @@
 
-INVD1:
+AN2D1:
   inputs:
-    I: ECO_in
+    A1: in[0]
+    A2: U0/ZN
   outputs:
-    ZN: ECO_out
-  primitive: not I
+    Z:  out[0]
+  primitive: A1 and A2
