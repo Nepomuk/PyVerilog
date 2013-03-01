@@ -19,15 +19,4 @@ To run the test,
 python Netlist.py -v
 
 SeanChen
-1. add double link pp from port to module
->>> pp = port()
->>> pp.module # find it's belong module
-
-2. add find sub Modules function
->>> nl1.link("MYINVD1")
->>> nl1.topMod
->>> MYINVD1
->>> nl1.finSubModules()
->>> ["xx", "cc"] # the sub modules not in cell lib
-
-3. add multi code trace
+please check test_ECO.py or ECO.py doctest. thanks
