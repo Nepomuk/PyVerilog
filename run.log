@@ -1,4 +1,0 @@
-Exception('U0 missing fanin (I,w0)\nU0 missing_fout (ZN,w1)',)
-Exception('the input port in[1] Fanout in top module TOP is empty',)
-Exception('the output port out[1] Fanin in top module TOP is empty',)
-link error, set(['COUNT_BITS8']) have not been defined

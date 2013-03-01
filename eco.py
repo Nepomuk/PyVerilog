@@ -246,27 +246,35 @@ class ECO(Netlist):
 
     def _rmUnLinkPorts():
     	""" remove unlinkable ports """
+	pass
 
     def _rmUnLinkModules():
     	""" remove unlinkable modules """
+	pass
 
     def _rmUnLinkCells():
     	""" remove unlinkable cells """
+	pass
 
     def _rmUnLinkNets():
     	""" remove unlinkalbe nets """
+	pass
 
     def _rmUnLinkPins():
     	""" remove unlinkalbe pins """
+	pass
 
     def _rmUnLinkFanin():
     	""" remove unlinkalbe fanin """
+	pass
 
     def _rmUnLinkFanout():
     	""" remove unlinkalbe fanout """
+	pass
 
     def _inspect(self):
     	""" inspect cells, modules, ports when the runECO is done """
+	pass
 
 	self._rmUnLinkModules()
 	self._rmUnLinkPorts()
