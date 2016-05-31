@@ -10,7 +10,7 @@ class Port(Net):
         # properties
         self.__dir = self.get("direction")
 
-        if self.__dir != "in" and self.__dir != "out":
+        if self.__dir != "in" and self.__dir != "inout" and self.__dir != "out":
             raise Exception("Bad port direction")
 
         # to be linked later

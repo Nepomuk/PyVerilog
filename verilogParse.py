@@ -151,6 +151,12 @@ def parseInput(s,l,t):
         raise Exception("Expected input identifier")
     parsePort(s,l,t[0],PortIn.PortIn)
 
+def parseInout(s,l,t):
+    import PortInout
+    if t[0][0] != 'inout':
+        raise Exception("Expected inout identifier")
+    parsePort(s,l,t[0],PortInout.PortInout)
+
 def parseOutput(s,l,t):
     import PortOut
     if t[0][0] != 'output':
@@ -326,7 +332,7 @@ def Verilog_BNF():
 
         inputDecl = Group( "input" + Optional( range ) + delimitedList( identifier ) + semi ).setParseAction(parseInput)
         outputDecl = Group( "output" + Optional( range ) + delimitedList( identifier ) + semi ).setParseAction(parseOutput)
-        inoutDecl = Group( "inout" + Optional( range ) + delimitedList( identifier ) + semi )
+        inoutDecl = Group( "inout" + Optional( range ) + delimitedList( identifier ) + semi ).setParseAction(parseInout)
 
         regIdentifier = Group( identifier + Optional( "[" + expr + ":" + expr + "]" ) )
         regDecl = Group( "reg" + Optional("signed") + Optional( range ) + delimitedList( regIdentifier ) + semi ).setName("regDecl")
@@ -672,7 +678,7 @@ def Verilog_BNF():
                  Group( ZeroOrMore( moduleItem ) ) +
                  "endmodule" ).setName("module").setParseAction(parseEndModule)
 
-        udpDecl = outputDecl | inputDecl | regDecl
+        udpDecl = outputDecl | inputDecl  | inoutDecl | regDecl
         #~ udpInitVal = oneOf("1'b0 1'b1 1'bx 1'bX 1'B0 1'B1 1'Bx 1'BX 1 0 x X")
         udpInitVal = (Regex("1'[bB][01xX]") | Regex("[01xX]")).setName("udpInitVal")
         udpInitialStmt = Group( "initial" +
